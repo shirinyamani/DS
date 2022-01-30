@@ -1,1 +1,2 @@
-# Data-Structure-and-Algorithms
+# Data-Structure-and-Algorithms-in-Python
+<img src="./img/DS.drawio.png"/>
