@@ -1,7 +1,3 @@
-from multiprocessing.sharedctypes import Value
-from timeit import timeit
-
-
 def openRussionDoll(doll):
     if doll==1: #when we reach to the end!
         print('all dolls are opened!')
