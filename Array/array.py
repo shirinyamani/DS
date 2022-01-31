@@ -1,0 +1,2 @@
+def missNum(num):
+    pass
