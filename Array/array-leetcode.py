@@ -26,19 +26,42 @@ def findAnagram(arr):
     return anagram.values()
 
 
+def longestsubstring(s):
+    longest=""
+    top=0
+    for i in s:
+        if i not in longest:
+            longest +=i
+        else:
+            longest= longest.split(i)[1]+i
+        if len(longest)>top:
+            top=len(longest)
+    return top
 
-def lenlongestSubstring(word):
-    pass
+def longestSub(s):
+    longest=""
+    len_longest=0
+    for i in s:
+        longest += i
+        print(longest)
+        if len(longest)>len_longest:
+            len_longest=len(longest)
+    return longest
+
+def palindromicSub(s):
+    s = longestSub(s)
+    print(s)
+    if s == s[::-1]:
+        return s
+    
 
 
 
-l1=["cat","rat","bat", "tac"]
-print("".join(sorted(l1)))
+def validPalindrome(s):
+    s ="".join(i for i in s.lower() if i.isalnum())
+    if s == s[::-1]:
+        return True
+    else: False
 
-
-
-
-
-#if __name__=="__main__":
-    #print(threeSum([-1, 0, 1, 2, -1, -4]))
-
+if __name__=="__main__":
+    print(longestSub("babad"))
