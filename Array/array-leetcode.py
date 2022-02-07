@@ -1,4 +1,5 @@
 import collections
+import enum
 from palindrome import Solution
 #sum of three numbers equal to zero 
 def threeSum(num):
@@ -75,14 +76,25 @@ def missingRanges(nums, lower, upper):
             res.append(str(nums[i]+1))
     return res
 
+#find first unique characters
 def firstuniqchar(s):
     count = collections.Counter(s)
     for idx, char in enumerate(s):
         if count[char] == 1:
             return idx
 
-
+#find the increasing triplet subsequence
+def increasingTriplet(nums):
+    a=b= float('inf')
+    for n in nums:
+        if a<b<n:
+            return True
+        elif a<n:
+            a=n
+        elif a<n<b:
+            b=n
+    return False
 
 
 if __name__ == "__main__":
-    print(missingRanges([0,1,3,50,75],0,99))
+    print(increasingTriplet([0,-1,3,-50,20]))
