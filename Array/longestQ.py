@@ -49,8 +49,32 @@ def longestConsecutive2(nums):
                 longest_streak= max(current_streak, longest_streak)
     return longest_streak
 
+def longestincreasingSub(nums): #O(n^2)
+    longest_streak = 0
+    for i in range(len(nums)):
+        for j in range(i+1, len(nums)):
+            if nums[j] > nums[i]: #if nxt num is greater than the current num
+                current_streak = j-i+1 #extend the seq
+                longest_streak = max(current_streak, longest_streak)
+    return longest_streak
+
+def longestincreasingSub2(nums): #O(n)
+    longest_streak = 0
+    current_streak = 1
+    for i in range(1, len(nums)):
+        if nums[i] > nums[i-1]: #if nxt num is greater than the current num
+            current_streak +=1 #extend the seq
+            longest_streak = max(current_streak, longest_streak)
+        else:
+            current_streak = 1
+    return longest_streak
+
+
+
+
 
 
 if __name__ =="__main__":
     print(longestsubstring("abbxese"))
     print(longestConsecutive2([0]))
+    print(longestincreasingSub2([10,9,2,5,3,7,101,18]))
