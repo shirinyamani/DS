@@ -10,6 +10,10 @@
     **Type of BT**
 
     - Full BT ---> each node has either Zero or 2 children!
+    <img src= "./img/full.png" >
     - Perfect BT ----> each node has 2 children + same level
+    <img src= "./img/perfect.png" >
     - Complete BT ----> all level has filled except the last level!
+    <img src= "./img/complete.png" >
     - Balanced BT ----> all leafs are at the same distance from root
+    <img src= "./img/balanced.png" >
