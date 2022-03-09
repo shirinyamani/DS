@@ -20,3 +20,19 @@
 
     - **Balanced BT** ----> all leafs are at the same distance from root
     <img src= "./img/balanced.png" >
+
+    ## Operations on Tree
+    - Insert a node
+    - Delete a Node 
+    - Search for a value
+    - Traverse all nodes
+    - Deletion of a tree
+
+    ## Traversal within a Tree
+    
+    - **BFS**
+        - InOrder
+        - PreOrder
+        - PostOrder
+    - **DFS**
+        - LevelOrder
