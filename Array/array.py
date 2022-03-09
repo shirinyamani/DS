@@ -106,9 +106,6 @@ def increasingTriplet(nums):
     return False
 
 
-def longestconsecutive(nums):
-    pass
-
 
 
 
