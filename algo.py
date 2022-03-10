@@ -103,8 +103,6 @@ def binarysearch(arr,elm):
 
 
 
-
-
 if __name__ == "__main__":
     #print(_merge([3,5,67],[6,9,20]))
     #print(MergeSort([39,12,18,85,72]))
