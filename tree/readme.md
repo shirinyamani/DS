@@ -172,10 +172,10 @@ Once we find the unbalanced node, then we go and check which subtree is causing 
 - Find the disbalanced node
 - Find the Condition, How? next bullet! 😁
 - Find the grand child of the node + the path to the grand child node!
-- Once found, then first, rotate the left child of the disballenced node to left(i.e. move the right child of the parent to parent place)
+- Once found, then first, rotate the left child of the disballenced node to left(i.e. move the right child of the parent to parent place) ---> Left rotation for the left child of the disballenced node!
 <img src="./img/lrrot.png">
 
-## Right Right Condition
+## Right Right Condition ---> Do rotation to the left for the disballenced node!
 - Find the disbalanced node( move upward and compare the difference in height)
 - Find the Condition, **How?** next bullet! 😁
 - Find the grand child of the node + the path to the grand child node!
@@ -183,6 +183,6 @@ Once we find the unbalanced node, then we go and check which subtree is causing 
 
 <img src="./img/rrrot.png">
 
-## Right Left Condition
+## Right Left Condition ---> Right rotation for the right child of the disballenced node! then Left rotation for the disballenced node!
 
 <img src="./img/1.png" width=250><img src="./img/2.png" width=250><img src="./img/3.png" width=280><img src="./img/4.png" width=280>
