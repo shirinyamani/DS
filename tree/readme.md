@@ -1,6 +1,6 @@
 # Tree  🌳🌲🌵🌴
 
-- ## Binary Tree
+- # Binary Tree 🌵
 
     <img src= "./img/bt.png" >
 
@@ -88,7 +88,7 @@
             - You ask **why? why not deleting the node itself?** This is bc in a tree, the next nodes rely on the prev node! So we cant really delete it as if we do so, then in breaks the connections! So we need to swap the value of the node we wanna delete with the deepest node, and then delete the deepest node.
 
 
-## Binary Search Tree
+# Binary Search Tree 🌵
 - left nodes are less than the root + right node!
 
     - **Search:** The methodology is pretty simple! ya start by the root, compare the target value with the root value, if the target value is less than the root value, then we go to the left node, if the target value is greater than the root value, then we go to the right node.
@@ -98,7 +98,7 @@
         - If the node we wanna delete has 2 children, then we need to find the deepest node in the left subtree and swap the value with the node we wanna delete.**(i.e. Succesor; the smallest node in the right subtree)**
         - If the node we wanna delete has 2 children, then we need to find the deepest node in the right subtree and swap the value with the node we wanna delete.
 
-# AVL Tree
+# AVL Tree 🌵
 - **AVL Tree** is a type of **Binary Search Tree** that is balanced.
 - Why we need it ? look at the img below;
 
@@ -185,4 +185,73 @@ Once we find the unbalanced node, then we go and check which subtree is causing 
 
 ## Right Left Condition ---> Right rotation for the right child of the disballenced node! then Left rotation for the disballenced node!
 
-<img src="./img/1.png" width=250><img src="./img/2.png" width=250><img src="./img/3.png" width=280><img src="./img/4.png" width=280>
+<img src="./img/1.png" width=250>  <img src="./img/2.png" width=250> <img src="./img/3.png" width=280> <img src="./img/4.png" width=280>
+
+
+# Binary Heap 🌵🗻
+- **Binary Heap** is a type of **Binary Tree** that is ordered.
+- **Min Heap:** The root node is the **smallest** value in the tree; The value of the children nodes are greater/equal than the value of the parent node.
+- **Max Heap:** The root node is the **largest** value in the tree; The value of the children nodes are less/equal than the value of the parent node.
+- Use Array for storage!
+
+<img src="./img/bh.png">
+
+## Why we need Binary Heap?
+- Find Smallest/Largest element in the array!
+- Insert element in the array in O(log n) time!
+
+## Practical Use of Heap?
+- Prim's Algorithm
+- Heap Sort
+- Priority Queue
+
+## Common Operations:
+- **Peek Heap**: Return the root node of the heap. *Note: Root always locate at arr[1]*
+- **Size of Heap:** How many nodes are there in the heap.*Note: return only the filled cells!*
+- **Traverse Heap:**
+    - Pre-Order Traversal
+    - In-Order Traversal
+    - Post-Order Traversal
+    - Level-Order Traversal
+
+## Methods
+- **Heapify:**  Method for adjusting the heap to the correct order.
+```
+def heapifytree(root, index, heap_size):
+    left = 2 * index
+    right = 2 * index + 1
+    largest = index
+    if left <= heap_size and root[left] > root[largest]:
+        largest = left
+    if right <= heap_size and root[right] > root[largest]:
+        largest = right
+    if largest != index:
+        root[largest], root[index] = root[index], root[largest]
+        heapifytree(root, largest, heap_size)
+
+def heapify(root):
+    heap_size = len(root) - 1
+    for i in range(heap_size // 2, 0, -1):
+        heapifytree(root, i, heap_size)
+
+def heapify(root, index):
+    heap_size = len(root) - 1 #-1 because the root is at index 1
+    left = 2 * index
+    right = 2 * index + 1
+    largest = index
+    if left <= heap_size and root[left] > root[largest]:
+        largest = left
+    if right <= heap_size and root[right] > root[largest]:
+        largest = right
+    if largest != index:
+        root[largest], root[index] = root[index], root[largest]
+        heapify(root, largest)
+```
+
+## Extract a Node from a Heap
+- Note that we can only extract the root node!
+- **Extract in Min-Heap**
+    - 1. remove the root
+    - 2. find the last node in the heap then swap it with the root
+    - 3. heapify the tree
+    - 4. **What if we have 2 child?** Then in the case of Min-Heap, we need to swap the root with the smallest child! And in Max-Heap, we need to swap the root with the largest child!
