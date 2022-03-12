@@ -255,3 +255,78 @@ def heapify(root, index):
     - 2. find the last node in the heap then swap it with the root
     - 3. heapify the tree
     - 4. **What if we have 2 child?** Then in the case of Min-Heap, we need to swap the root with the smallest child! And in Max-Heap, we need to swap the root with the largest child!
+
+# Tries 🧾📝
+
+<img src="./img/tries.png">
+
+- **Tries** is a tree that mostly used for **String**.
+- Any node can store non-repeating characters.
+- every node keep track of the end of the string. (* in the pic above!)
+- Can have multiple children for each node.
+
+<img src="./img/trie.png" width=400>
+
+## Common Operation on Tries:
+- Insertion 
+- Search for a String 
+- Deletion of a String 
+
+## Practical Usage in Interview
+- Validation of a word
+- Spell Checker
+- Search for a string  
+- Auto Complete
+
+## Insert a String in Tries:
+<img src="./img/inserttrie.png" width=400>
+
+- In one node we can insert more than one charactor (I in our example)
+
+<img src="./img/inserttrie1.png" width=400>
+
+## Search a String in a Trie:
+- **Case 1:** 
+    - String **does not exist** in the Trie. So we start by comparing the first character of the string with the first character of the node. If they are not equal, then we can return False.
+
+        <img src="./img/strnotexist.png" width=350> 
+
+- **Case 2:**
+    - String **does exist** in the Trie. So we start by comparing the first character of the string with the first character of the node. If they are equal, then we need to check the rest of the string.
+        - If the rest of the string is not empty, then we need to check the next node.
+        - By checking, it does not mean that the string is in the Trie! We need to check whether **it is the end of the string or not**. 
+            - If it is the end of the string, then we return True, else False!
+
+        <img src="./img/strexist.png" width=350>
+
+- **Case 3:**
+    - String is a prefix of another string in the Trie, which means that it does not exist! **Why?** Cuz the next node of it is not endofString!
+
+        <img src="./img/strnotexist1.png" width=350>
+
+## Deletion String in Tries:
+- Start from the leaf node and go up to the root node!
+- We need to check if the string is a prefix of another string in the node or not! I.e. Check if any node rely on this string, if so, then we can't delete it and we should do sth else! But what? 🤔
+
+    - **Case 1: Some other prefix of string is same as the one we wanna delete!**
+        - 1. Check whether the sting exist in the Trie! *Note to check the EndingSting*
+        - 2. If it exist, then we start by the leaf and go one by one up to the root! Any time we check whether any node rely on this string or not! If so, we can delete it right away! (I in the below pic, Goal: Delete API, APPLE)
+
+                <img src="./img/delstr1.png" width=200>
+
+    - **Case 2: String is a Prefix to other String!**
+        - 1. So for exp. in the below pic, if we wanna delete API we see that we have a headache! Cuz if we delete API, then APIS will be impacted! (S is after I; S relys on I) So what can we do? 🤔
+        - 2. So in this case, we dont delete the String! Rather we just update the EndingSting of the node! So that the Trie will not recognize it as a Complete String! 
+
+                <img src="./img/delstr2.png" width=200> 
+                
+                <img src="./img/delstr22.png" width=200> 
+
+
+    - **Case 3: Some other Strings are the prefix of the Str we wanna delete!**
+
+## Summary of Deletion 
+- First check whether any node rely on the target node. If not, then we can delete it rightaway! If Yes, then
+    - Do some adjustments, like changing the StringEndingPoint.
+                 
+
