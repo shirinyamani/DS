@@ -127,6 +127,7 @@ When the tree is balanced, then we dont need to rotate the tree(i.e. difference 
 - **Case2:** Rotation is required: 
 When the tree is unbalanced, then Rotation is required!
 <img src="./img/rotateavl.png">
+
 - **Left left condition:**
     - 1. Rotate right
     - 2. Update the height of the tree
@@ -134,7 +135,7 @@ When the tree is unbalanced, then Rotation is required!
     - 1. Rotate left
     - 2. Update the height of the tree
 - **Left right condition:**
-    - 1. Rotate left
+    - 1. Rotate left the child of the root then rotate right the root
     - 2. Update the height of the tree
 - **Right left condition:**
     - 1. Rotate right
