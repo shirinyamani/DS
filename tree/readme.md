@@ -156,14 +156,33 @@ Once we find the unbalanced node, then we go and check which subtree is causing 
             <img src="./img/rightrot.png">
     - If the right subtree is causing the unbalance, then we need to rotate the tree to the left.
 
-## Summary:
+## Summary of Left Left Condition Rotation:
 - Find the unbalanced node, then find the condition
 - Find the condition of the unbalanced node 
-- Find the path to the its grand child node
-- Once found, how to know which child to select?
+- Find the grand child of this unbalanced node + the path to its grand child node
+- Once found,then how to know which child to select?
     - the one that has more height!
-- Once found, then Rotate!
+- Once found, then Rotate Right!
 
 <img src="./img/rotavlbefore.png" width=300>
 <img src="./img/rotavlafter.png" width=300>
 <img src="./img/fullrot.png" >
+
+## Left Right Condition
+- Find the disbalanced node
+- Find the Condition, How? next bullet! 😁
+- Find the grand child of the node + the path to the grand child node!
+- Once found, then first, rotate the left child of the disballenced node to left(i.e. move the right child of the parent to parent place)
+<img src="./img/lrrot.png">
+
+## Right Right Condition
+- Find the disbalanced node( move upward and compare the difference in height)
+- Find the Condition, **How?** next bullet! 😁
+- Find the grand child of the node + the path to the grand child node!
+- Once found,rotate to left!
+
+<img src="./img/rrrot.png">
+
+## Right Left Condition
+
+<img src="./img/1.png" width=200><img src="./img/2.png" width=200><img src="./img/3.png" width=200><img src="./img/4.png" width=200>
