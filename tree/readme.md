@@ -262,7 +262,7 @@ def heapify(root, index):
 
 - **Tries** is a tree that mostly used for **String**.
 - Any node can store non-repeating characters.
-- every node keep track of the end of the string. (* in the pic above!)
+- Every node keep track of the end of the string. (* in the pic above!)
 - Can have multiple children for each node.
 
 <img src="./img/trie.png" width=400>
