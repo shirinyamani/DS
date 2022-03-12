@@ -258,7 +258,7 @@ def heapify(root, index):
 
 # Tries 🧾📝
 
-<img src="./img/tries.png" width=700>
+<img src="./img/tries.png">
 
 - **Tries** is a tree that mostly used for **String**.
 - Any node can store non-repeating characters.
