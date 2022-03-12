@@ -155,7 +155,7 @@ Once we find the unbalanced node, then we go and check which subtree is causing 
             <img src="./img/rightrot.png">
     - If the right subtree is causing the unbalance, then we need to rotate the tree to the left.
 
-    ## Summary:
+## Summary:
     - Find the unbalanced node, then find the condition
     - Find the condition of the unbalanced node 
     - Find the path to the its grand child node
