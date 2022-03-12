@@ -90,8 +90,79 @@
 
 ## Binary Search Tree
 - left nodes are less than the root + right node!
+
+    - **Search:** The methodology is pretty simple! ya start by the root, compare the target value with the root value, if the target value is less than the root value, then we go to the left node, if the target value is greater than the root value, then we go to the right node.
     - **Delete:** 
-        - If the node we wanna delete is a leaf node, then we can just delete it.
+        - If the node we wanna delete is a leaf node, then we can just delete straightaway!
         - If the node we wanna delete has only one child, then we can just delete it and replace it with the child.
         - If the node we wanna delete has 2 children, then we need to find the deepest node in the left subtree and swap the value with the node we wanna delete.**(i.e. Succesor; the smallest node in the right subtree)**
         - If the node we wanna delete has 2 children, then we need to find the deepest node in the right subtree and swap the value with the node we wanna delete.
+
+# AVL Tree
+- **AVL Tree** is a type of **Binary Search Tree** that is balanced.
+- Why we need it ? look at the img below;
+
+<img src="./img/avl.png">
+
+So, how can we balance the tree? We can get rid of the unbalanced nodes by doing some **rotations**!
+But how do we know which tree needs to be rotated? We can use the **height** of the tree!
+The idea is pretty simple; if the difference between the height of left subtree and the right subtree is greater than 1, then we need to rotate the tree.
+## Balanced AVL
+<img src="./img/balanceavl.png">
+
+## Dis-balanced AVL
+<img src="./img/disavl.png">
+
+We can solve such a problem by doing some **Rotations**!
+
+## Insertion in AVL
+
+First we need to figure whether we need to rotate the tree or not.
+
+- **Case1:** Rotation is not required:
+When the tree is balanced, then we dont need to rotate the tree(i.e. difference height subtrees equal to 1). So we treat it same as BST; 
+    - 1.Compare w/ the root to go right/left!
+    - 2.Insert at the first empty spot! 
+
+- **Case2:** Rotation is required: 
+When the tree is unbalanced, then Rotation is required!
+<img src="./img/rotateavl.png">
+- **Left left condition:**
+    - 1. Rotate right
+    - 2. Update the height of the tree
+- **Right right condition:**
+    - 1. Rotate left
+    - 2. Update the height of the tree
+- **Left right condition:**
+    - 1. Rotate left
+    - 2. Update the height of the tree
+- **Right left condition:**
+    - 1. Rotate right
+    - 2. Update the height of the tree
+
+### What does left left condition mean?
+So imagine in the following img, we wanna insert a node with value of 10. 
+- We start by comparing from the root node, if the value of the root node is greater than 10, then we go to the left subtree, if the value of the root node is less than 10, then we go to the right subtree.
+- Once we find the right place to insert the node, then we insert it!
+- Now we start with the node we just inserted, all the way up to the root node, we need to check if the height of the subtrees are balanced or not. To find the node that is causing the unbalance. then we need to find the condition (node 30 in our case)
+<img src="./img/disnode.png">
+    - If the height of the subtrees are balanced, then we dont need to rotate the tree.
+    - If the height of the subtrees are not balanced, then we need to rotate the tree. 
+Once we find the unbalanced node, then we go and check which subtree is causing the unbalance.)
+    - If the left subtree is causing the unbalance, then we need to rotate the tree to the right. (20-10 our case)
+        - **right rotation:** 
+            - Root node comes down then the left subtree comes up.
+            <img src="./img/rightrot.png">
+    - If the right subtree is causing the unbalance, then we need to rotate the tree to the left.
+
+    ## Summary:
+    - Find the unbalanced node, then find the condition
+    - Find the condition of the unbalanced node 
+    - Find the path to the its grand child node
+    - Once found, how to know which child to select?
+        - the one that has more height!
+    - Once found, then Rotate!
+
+<img src="./img/rotavlbefore.png" width=300>
+<img src="./img/rotavlafter.png" width=300>
+<img src="./img/fullrot.png" >
