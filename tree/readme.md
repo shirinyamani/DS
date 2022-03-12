@@ -185,4 +185,4 @@ Once we find the unbalanced node, then we go and check which subtree is causing 
 
 ## Right Left Condition
 
-<img src="./img/1.png" width=200><img src="./img/2.png" width=200><img src="./img/3.png" width=200><img src="./img/4.png" width=200>
+<img src="./img/1.png" width=250><img src="./img/2.png" width=250><img src="./img/3.png" width=280><img src="./img/4.png" width=280>
