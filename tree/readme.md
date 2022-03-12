@@ -1,6 +1,6 @@
 # Tree  🌳🌲🌵🌴
 
-- # Binary Tree 🌵
+- ## Binary Tree 🌵
 
     <img src= "./img/bt.png" >
 
