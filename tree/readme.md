@@ -164,5 +164,5 @@ Once we find the unbalanced node, then we go and check which subtree is causing 
 - Once found, then Rotate!
 
 <img src="./img/rotavlbefore.png" width=300>
-<img src="./img/rotavlafter.png" width=250>
+<img src="./img/rotavlafter.png" width=300>
 <img src="./img/fullrot.png" >
