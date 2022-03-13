@@ -214,8 +214,17 @@ Once we find the unbalanced node, then we go and check which subtree is causing 
     - Post-Order Traversal
     - Level-Order Traversal
 
-## Methods
-- **Heapify:**  Method for adjusting the heap to the correct order.
+## Problem of Heap:
+What it the element we insert, is not in right order? 🤔 Like for example in the case of Min Heap, the element we insert is greater than the parent node, What should we do? The answer is to swap the element with the parent node (i.e. move the element in the correct order!). See image below to better understand the problem(20 is not in order in our example!)
+<img src="./img/heaporder.png">
+
+Then we need to swap 20:
+<img src="./img/heaporder1.png">
+
+The Method for such a problem is called **Heapify**.
+
+## Heapify Method:
+**Heapify:**  Method for adjusting the heap to the correct order. In the following, I provided three methods for heapify!
 ```
 def heapifytree(root, index, heap_size):
     left = 2 * index
