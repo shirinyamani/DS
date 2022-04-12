@@ -2,6 +2,11 @@ Question 1:
 Given a directed graph with two nodes(S,E), design an algorithm to find whether there is a route between S and E
     #hint: BFS / Queue
 
+Question 2:
+Given a sorted array with unique integers, write an algorithm to build a BST
+with Minimal height!
+    #hint: Minimal height ---> left n right heights gotta be equal (mid)
+    
 
 
 
