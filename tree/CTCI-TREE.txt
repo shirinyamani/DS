@@ -1,0 +1,7 @@
+Question 1: 
+Given a directed graph with two nodes(S,E), design an algorithm to find whether there is a route between S and E
+    #hint: BFS / Queue
+
+
+
+
