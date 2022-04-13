@@ -107,6 +107,11 @@ def isbalancehelper(root): #check hight
 def isbalance(root):
     return isbalancehelper(root) > -1 
 
+#Question 5
+
+def is_BST(root):
+    left = root.left
+
 if __name__ == "__main__":
     print(depth_bfs(minimalTree([1,2,3,4,5,6,7,8,9,10])))   
         
