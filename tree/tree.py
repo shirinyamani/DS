@@ -108,9 +108,24 @@ def isbalance(root):
     return isbalancehelper(root) > -1 
 
 #Question 5
+def helperBST(node, min_val=float("-inf"), max_val=float("inf")):
+    if not node:
+        return True
+    val = node.val
+
+    if val <= min_val or val>= max_val:
+        return False
+
+    if not helperBST(node.left, min_val,val):
+        return False
+
+    if not helperBST(node.right, val, max_val):
+        return False
+
+    return True
 
 def is_BST(root):
-    left = root.left
+    return helperBST(root)
 
 if __name__ == "__main__":
     print(depth_bfs(minimalTree([1,2,3,4,5,6,7,8,9,10])))   

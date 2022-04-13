@@ -16,6 +16,7 @@ Question4:
 Write an algorithm to check whether a tree is balanced!
     #hint: check heights of both left n right and see the difference not
     be greater than 1!
-    
 
-
+Question5:
+Write algorithm to validate a tree as a BST!
+    #hint: each node max n min values infinity
