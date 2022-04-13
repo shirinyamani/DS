@@ -1,3 +1,6 @@
+import collections
+import linkedlist
+
 class graph:
     def __init__(self,gdict):
         if gdict is None:
@@ -57,3 +60,31 @@ def minimalTree1(sortedArray):
     left = minimalTree1(sortedArray[:mid])
     right = minimalTree1(sortedArray[mid+1:])
     return BSTNode(sortedArray[mid],left,right)
+
+
+#Question 3
+def depth_bfs(root):
+    if root is None:
+        return 0
+    queue = collections.deque([root])
+    levels = {}
+
+    while len(queue) > 0:
+        node,level = queue.popleft()
+        if level not in levels:
+            levels[level] = linkedlist()
+
+        #add node to level
+        levels[level].add(node)
+
+        #push to the queue
+        if node.left:
+            queue.append(node.left,level+1)
+        if node.right:
+            queue.append(node.right,level+1)
+
+    return levels
+
+if __name__ == "__main__":
+    print(depth_bfs(minimalTree([1,2,3,4,5,6,7,8,9,10])))   
+        

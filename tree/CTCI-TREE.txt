@@ -7,6 +7,9 @@ Given a sorted array with unique integers, write an algorithm to build a BST
 with Minimal height!
     #hint: Minimal height ---> left n right heights gotta be equal (mid)
     
-
+Question 3:
+Given a BT, design an algorithm to create a linked list of all the nodes at each depth
+    #hint: BFS / Queue
+    #hint: use a {level: [nodes]} dict
 
 
