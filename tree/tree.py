@@ -127,6 +127,28 @@ def helperBST(node, min_val=float("-inf"), max_val=float("inf")):
 def is_BST(root):
     return helperBST(root)
 
+
+#Question 6
+
+def inorderSuccessor(node):
+    if node is None:
+        return None
+
+    if node.right:
+        curr = node.right
+
+    while node.left:
+        curr = node.left
+        return curr
+
+    ancestor = node.parent
+    child = node
+
+    while ancestor and ancestor.right == child:
+        child = ancestor
+        ancestor = ancestor.parent
+    return ancestor
+
 if __name__ == "__main__":
     print(depth_bfs(minimalTree([1,2,3,4,5,6,7,8,9,10])))   
         
