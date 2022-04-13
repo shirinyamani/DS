@@ -129,7 +129,6 @@ def is_BST(root):
 
 
 #Question 6
-
 def inorderSuccessor(node):
     if node is None:
         return None
