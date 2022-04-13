@@ -1,4 +1,5 @@
 import collections
+from turtle import right
 from DS_implementation import LinkedList
 
 class graph:
@@ -82,8 +83,29 @@ def depth_bfs(root):
             queue.append(node.left,level+1)
         if node.right:
             queue.append(node.right,level+1)
-
     return levels
+
+# Question 4
+def isbalancehelper(root): #check hight
+    if root is None:
+        return 0
+    
+    leftheight = isbalancehelper(root.left)
+    rightheight = isbalancehelper(root.right)
+
+    if leftheight == -1: #bigger than 1 difference
+        return -1
+
+    if rightheight == -1:
+        return -1
+
+    if abs(leftheight - rightheight) > 1:
+        return -1
+
+    return max(leftheight, rightheight) + 1
+
+def isbalance(root):
+    return isbalancehelper(root) > -1 
 
 if __name__ == "__main__":
     print(depth_bfs(minimalTree([1,2,3,4,5,6,7,8,9,10])))   
