@@ -12,4 +12,10 @@ Given a BT, design an algorithm to create a linked list of all the nodes at each
     #hint: BFS / Queue
     #hint: use a {level: [nodes]} dict
 
+Question4:
+Write an algorithm to check whether a tree is balanced!
+    #hint: check heights of both left n right and see the difference not
+    be greater than 1!
+    
+
 
