@@ -1,5 +1,5 @@
 import collections
-import linkedlist
+from DS_implementation import LinkedList
 
 class graph:
     def __init__(self,gdict):
@@ -72,7 +72,7 @@ def depth_bfs(root):
     while len(queue) > 0:
         node,level = queue.popleft()
         if level not in levels:
-            levels[level] = linkedlist()
+            levels[level] = LinkedList()
 
         #add node to level
         levels[level].add(node)
