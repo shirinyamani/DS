@@ -1,6 +1,6 @@
 import collections
 from turtle import right
-from DS_implementation import LinkedList
+
 
 class graph:
     def __init__(self,gdict):
@@ -148,6 +148,44 @@ def inorderSuccessor(node):
         ancestor = ancestor.parent
     return ancestor
 
+#Question 7
+def buildorder(projects, dependencies):
+    dependencyTree = {p: set() for p in projects}
+    buildorder = []
+    independantProjects = set(projects)
+    for dependency, project in dependencies:
+        dependencyTree[project].add(dependency)
+
+    while independantProjects:
+       
+        for project in list(independantProjects):
+            dependency = dependencyTree[project]
+            if not independantProjects.intersection(dependencies):
+                buildorder.append(project)
+                independantProjects.remove(project)
+               
+    return buildorder
+
+
+
+
+
+    
+
+    
+
 if __name__ == "__main__":
-    print(depth_bfs(minimalTree([1,2,3,4,5,6,7,8,9,10])))   
-        
+        projects = ["a", "b", "c", "d", "e", "f", "g"]
+        dependencies = [
+            ("d", "g"),
+            ("a", "e"),
+            ("b", "e"),
+            ("c", "a"),
+            ("f", "a"),
+            ("b", "a"),
+            ("f", "c"),
+            ("f", "b"),
+        ]
+
+        print(buildorder(projects,dependencies))
+
