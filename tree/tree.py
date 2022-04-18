@@ -161,7 +161,7 @@ def buildorder(projects, dependencies):
     while independantProjects:
        
         for project in list(independantProjects):
-            dependency = dependencyTree[project]
+            dependency = dependencyTree[project] #define dependency
             if not independantProjects.intersection(dependencies):
                 buildorder.append(project)
                 independantProjects.remove(project)
