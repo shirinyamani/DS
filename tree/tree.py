@@ -1,5 +1,5 @@
 import collections
-from turtle import right
+from DS_implementation import LinkedList
 
 
 class graph:
