@@ -150,12 +150,14 @@ def inorderSuccessor(node):
 
 #Question 7
 def buildorder(projects, dependencies):
+    #Step1: Build dependency Tree 
     dependencyTree = {p: set() for p in projects}
     buildorder = []
-    independantProjects = set(projects)
+    independantProjects = set(projects) 
     for dependency, project in dependencies:
         dependencyTree[project].add(dependency)
 
+    #Step2: Check the dependant Projects!
     while independantProjects:
        
         for project in list(independantProjects):
