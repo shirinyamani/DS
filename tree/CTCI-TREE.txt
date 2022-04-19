@@ -37,3 +37,11 @@ Question9:
 Given a BST, print all possible arrays that could have made this tree!
     #hint: build left n right subtrees n a seq =[] to store them all!
     #hint: weave(first, second, [node.key], sequence)
+
+Question10:
+Determine whether T1 and T2 are Subtrees!
+    #hint: idea is comparing each n every node of the trees n if we get 
+    to a mutual one, then call math method to basically figure the trees are 
+    identical or not! Then for the taret node in the bigger tree gotta recursively
+    call isSubtree for left n right trees cuz the targer root is in intersection of either 
+    of them!
