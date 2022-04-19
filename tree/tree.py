@@ -205,7 +205,9 @@ def weave(first, second, prefix, results):
 
     return results
 
-
+#Question 10
+def isSubtree(t1, t2): 
+    pass #TODO
     
 
     
