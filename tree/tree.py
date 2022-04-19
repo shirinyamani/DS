@@ -133,14 +133,15 @@ def inorderSuccessor(node):
     if node is None:
         return None
 
-    if node.right:
+    if node.right: #for the parent sample to know to get to right (inorder)
         curr = node.right
 
-    while node.left:
+    while node.left: #if get to right n the node has left n right child, we need to get to the left one
+
         curr = node.left
         return curr
 
-    ancestor = node.parent
+    ancestor = node.parent # if already on right node n wanna jump to very first root!
     child = node
 
     while ancestor and ancestor.right == child:
@@ -151,25 +152,58 @@ def inorderSuccessor(node):
 #Question 7
 def buildorder(projects, dependencies):
     #Step1: Build dependency Tree 
-    dependencyTree = {p: set() for p in projects}
+    dependencyTree = {p: set() for p in projects} #build initial tree
     buildorder = []
     independantProjects = set(projects) 
     for dependency, project in dependencies:
-        dependencyTree[project].add(dependency)
+        dependencyTree[project].add(dependency) #add projects n their dependencies
 
     #Step2: Check the dependant Projects!
     while independantProjects:
        
         for project in list(independantProjects):
             dependency = dependencyTree[project] #define dependency
-            if not independantProjects.intersection(dependencies):
+            if not independantProjects.intersection(dependencies): 
                 buildorder.append(project)
                 independantProjects.remove(project)
                
     return buildorder
 
 
+#Question 9
+def BST_seq(root):
+    if not root:
+        return None
+    return helper(root)
 
+def helper(root):
+    right_tree = helper(root.right) #Step1: for each of the SubTrees
+    left_tree = helper(root.left)
+    sequences = [] #to store the arrays
+    for right in right_tree: 
+        for left in left_tree:
+            sequences = weave(left, right, [root.key], sequences)
+    return sequences
+# weave({1,2}, {3,4},{})--> weave({2}, {3,4}, {1}) --> weave({},{3,4},{1,2})--> (1,2,3,4)
+def weave(first, second, prefix, results):
+    if len(first) == 0 or len(second) == 0:
+        results = prefix.copy()
+        results.extend(first)
+        results.extend(second)
+        results.append(results)
+        return results
+
+    head = first[0]
+    prefix.append(head)
+    results = weave(first[1:], second, prefix, results)
+    prefix.pop()
+
+    head = second[0]
+    prefix.append(head)
+    results = weave(first, second[1:], prefix, results)
+    prefix.pop()
+
+    return results
 
 
     
