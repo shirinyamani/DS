@@ -32,3 +32,8 @@ Find a build order for the projects.
     #hint: 1. build the dependency tree
     #hint: 2. look for independent projects (set.intersection)
     #hint: 3. build the build order
+
+Question9:
+Given a BST, print all possible arrays that could have made this tree!
+    #hint: build left n right subtrees n a seq =[] to store them all!
+    #hint: weave(first, second, [node.key], sequence)

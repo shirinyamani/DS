@@ -206,8 +206,21 @@ def weave(first, second, prefix, results):
     return results
 
 #Question 10
-def isSubtree(t1, t2): 
-    pass #TODO
+def isMatch(s,t):
+    if not s and not t:
+        return False
+    if s.val == t.val: #if the values are equal then check whether the trees are identical
+        return isMatch(s.left, t.left) and isMatch(s.right, t.right)
+
+def isSubtree(s,t):
+    if s is None or t is None:
+        return False
+
+    if isMatch(s,t): #if the comparison win 
+        return True
+    # S is the bigger tree
+    return isSubtree(s.left, t) or isSubtree(s.right, t)
+
     
 
     
