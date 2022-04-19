@@ -25,3 +25,10 @@ Question6:
 Write an algorithm to find the "next" node (i.e. in-order successor) of a given node in a BST.
     #hint: BST property: left < root < right
     #hint: inorder successor: left most node in right subtree
+
+Question7:
+You are a list of projects and a list of dependencies. All of the projects gotta be built before any of the dependencies.
+Find a build order for the projects.
+    #hint: 1. build the dependency tree
+    #hint: 2. look for independent projects (set.intersection)
+    #hint: 3. build the build order
