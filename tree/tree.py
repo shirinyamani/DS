@@ -221,9 +221,7 @@ def isSubtree(s,t):
     # S is the bigger tree
     return isSubtree(s.left, t) or isSubtree(s.right, t)
 
-    
-
-    
+#Question11    
 
 if __name__ == "__main__":
         projects = ["a", "b", "c", "d", "e", "f", "g"]
