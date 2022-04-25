@@ -374,30 +374,6 @@ class tree:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
         projects = ["a", "b", "c", "d", "e", "f", "g"]
         dependencies = [
