@@ -1,4 +1,5 @@
 import collections
+from logging import root
 from DS_implementation import LinkedList
 
 
@@ -221,7 +222,69 @@ def isSubtree(s,t):
     # S is the bigger tree
     return isSubtree(s.left, t) or isSubtree(s.right, t)
 
-#Question11    
+#Question11
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.right = None
+        self.left = None
+        self.parent = None
+        self.size = 1
+
+    @property
+    def left_size(self):
+        if self.left:
+            return self.left.size
+        return 0
+
+    @property
+    def right_size(self):
+        if self.right:
+            return self.right.size
+        return 0
+
+class BST:
+    def __init__(self):
+        self.root = root
+
+    def insert(self,value):
+        new_node = Node(value)
+        if self.root is None:
+            self.root = new_node
+
+        curr_node = self.root
+        while curr_node:
+            curr_node.size +=1
+            if curr_node.value >= value:
+                if curr_node.left is None:
+                    curr_node.left = new_node
+                    new_node.parent = curr_node
+                    return
+                curr_node = curr_node.left
+
+            else:
+                if curr_node.right is None:
+                    curr_node.right = new_node
+                    new_node.parent = curr_node
+                    return
+                curr_node = curr_node.right
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
         projects = ["a", "b", "c", "d", "e", "f", "g"]
