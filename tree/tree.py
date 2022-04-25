@@ -105,8 +105,8 @@ def is_balancehelper(root): #check hight
 
     return max(leftheight, rightheight) + 1
 
-def isbalance(root):
-    return isbalancehelper(root) > -1 
+def is_balance(root):
+    return is_balancehelper(root) > -1 
 
 #Question 5
 def helperBST(node, min_val=float("-inf"), max_val=float("inf")):
@@ -155,18 +155,18 @@ def buildorder(projects, dependencies):
     #Step1: Build dependency Tree 
     dependencyTree = {p: set() for p in projects} #build initial tree
     buildorder = []
-    independantProjects = set(projects) 
+    independentProjects = set(projects) 
     for dependency, project in dependencies:
         dependencyTree[project].add(dependency) #add projects n their dependencies
 
     #Step2: Check the dependant Projects!
-    while independantProjects:
+    while independentProjects:
        
-        for project in list(independantProjects):
+        for project in list(independentProjects):
             dependency = dependencyTree[project] #define dependency
-            if not independantProjects.intersection(dependencies): 
+            if not independentProjects.intersection(dependencies): 
                 buildorder.append(project)
-                independantProjects.remove(project)
+                independentProjects.remove(project)
                
     return buildorder
 
@@ -252,25 +252,60 @@ class BST:
         if self.root is None:
             self.root = new_node
 
-        curr_node = self.root
-        while curr_node:
-            curr_node.size +=1
-            if curr_node.value >= value:
-                if curr_node.left is None:
-                    curr_node.left = new_node
-                    new_node.parent = curr_node
+        cur_node = self.root
+        while cur_node:
+            cur_node.size +=1
+            if cur_node.value >= value:
+                if cur_node.left is None:
+                    cur_node.left = new_node
+                    new_node.parent = cur_node
                     return
-                curr_node = curr_node.left
+                cur_node = cur_node.left
 
             else:
-                if curr_node.right is None:
-                    curr_node.right = new_node
-                    new_node.parent = curr_node
+                if cur_node.right is None:
+                    cur_node.right = new_node
+                    new_node.parent = cur_node
                     return
-                curr_node = curr_node.right
+                cur_node = cur_node.right
+
+    def delete_helper(self, node, value):
+        if node is None:
+            return node
+        
+        if node.value < value:
+            node.left = self.delete_helper(node.left, value)
+
+        elif node.value > value:
+            node.right = self.delete_helper(node.right, value)
+
+        else:
+            if node.left is None:
+                temp, node = node.right, None
+                return temp
+
+            elif node.right is None:
+                temp, node = node.left, None
+                return temp
+
+            temp = min_val_node(node.right)
+            node.value = temp.value
+            node.right = self.delete_helper(node.right, temp.value)
 
     def delete(self, value):
-        pass
+        self.delete_helper(self.root, value)
+
+def min_val_node(node):
+    current = node
+    while current.left is not None:
+        #go deep in the tree to find leftmost leaf
+        current = current.left
+    return current
+
+
+
+
+
 
 
 
