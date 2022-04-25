@@ -87,6 +87,9 @@
             - Delete the deepest node.
             - You ask **why? why not deleting the node itself?** This is bc in a tree, the next nodes rely on the prev node! So we cant really delete it as if we do so, then in breaks the connections! So we need to swap the value of the node we wanna delete with the deepest node, and then delete the deepest node.
 
+            <img src= "./img/del1.png">
+            <img src= "./img/del2.png">
+
 
 # Binary Search Tree 🌵
 - left nodes are less than the root + right node!
