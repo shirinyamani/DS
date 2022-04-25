@@ -1,6 +1,7 @@
 import collections
 from logging import root
 from DS_implementation import LinkedList
+import random
 
 
 class graph:
@@ -10,7 +11,7 @@ class graph:
         self.gdict = gdict
 
     def addEdge(self,vertex, edge):
-        self.gdict[vertex].apped(edge)
+        self.gdict[vertex].append(edge)
 
 #Question 1
     def is_route_bfs(self, start, end):
@@ -23,7 +24,7 @@ class graph:
 
             for adjnode in self.gdict[denode]:
                 if adjnode not in visited:
-                    if adjnode == end: #chehck the route
+                    if adjnode == end: #check the route
                         path = True
                         break
                     else:
@@ -135,12 +136,12 @@ def inorderSuccessor(node):
         return None
 
     if node.right: #for the parent sample to know to get to right (inorder)
-        curr = node.right
+        cur = node.right
 
     while node.left: #if get to right n the node has left n right child, we need to get to the left one
 
-        curr = node.left
-        return curr
+        cur = node.left
+        return cur
 
     ancestor = node.parent # if already on right node n wanna jump to very first root!
     child = node
@@ -292,8 +293,44 @@ class BST:
             node.value = temp.value
             node.right = self.delete_helper(node.right, temp.value)
 
+        node.size -= 1
+        return node
+
     def delete(self, value):
         self.delete_helper(self.root, value)
+
+
+    def get_node(self, value):
+        current = self.root
+        while current:
+            if current.value == value:
+                return current
+
+            if current.value > value:
+                current = current.left
+
+            else:
+                current = current.right
+
+        raise Exception("No such value!")
+
+    def get_random_node(self):
+        current = self.root
+
+        choices = ["self", "left","right"]
+        choice_weight = [1, self.left_size, self.right_size]
+        decision = random.choices(choices,choice_weight)[0]
+
+        if decision == "self":
+                return current
+
+        if decision == "left":
+                current = current.left
+
+        elif decision == "right":
+                current = current.right
+        else:
+            raise RuntimeError("Should not be possible")
 
 def min_val_node(node):
     current = node
