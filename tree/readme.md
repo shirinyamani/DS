@@ -4,8 +4,8 @@
 
     <img src= "./img/bt.png" >
 
-    - Each node has at most 2 children, could be one but no more than 2
-    - Binary Search Tree used for it!
+    - Each node has at most 2 children, could be one but no more than 2. 
+    - Binary Search Tree was used for it!
 
     **Type of BT**
 
@@ -98,7 +98,7 @@
     - **Delete:** 
         - If the node we wanna delete is a leaf node, then we can just delete straightaway!
         - If the node we wanna delete has only one child, then we can just delete it and replace it with the child.
-        - If the node we wanna delete has 2 children, then we need to find the deepest node in the left subtree and swap the value with the node we wanna delete.**(i.e. Succesor; the smallest node in the right subtree)**
+        - If the node we wanna delete has 2 children, then we need to find the deepest node in the left subtree and swap the value with the node we wanna delete.**(i.e. Successor; the smallest node in the right subtree)**
         - If the node we wanna delete has 2 children, then we need to find the deepest node in the right subtree and swap the value with the node we wanna delete.
 
 # AVL Tree 🌵
@@ -123,7 +123,7 @@ We can solve such a problem by doing some **Rotations**!
 First we need to figure whether we need to rotate the tree or not.
 
 - **Case1:** Rotation is not required:
-When the tree is balanced, then we dont need to rotate the tree(i.e. difference height subtrees equal to 1). So we treat it same as BST; 
+When the tree is balanced, then we don't need to rotate the tree(i.e. difference height subtrees equal to 1). So we treat it same as BST; 
     - 1.Compare w/ the root to go right/left!
     - 2.Insert at the first empty spot! 
 
@@ -172,14 +172,14 @@ Once we find the unbalanced node, then we go and check which subtree is causing 
 <img src="./img/fullrot.png" >
 
 ## Left Right Condition
-- Find the disbalanced node
+- Find the imbalanced node
 - Find the Condition, How? next bullet! 😁
 - Find the grand child of the node + the path to the grand child node!
 - Once found, then first, rotate the left child of the disballenced node to left(i.e. move the right child of the parent to parent place) ---> Left rotation for the left child of the disballenced node!
 <img src="./img/lrrot.png">
 
 ## Right Right Condition ---> Do rotation to the left for the disballenced node!
-- Find the disbalanced node( move upward and compare the difference in height)
+- Find the dis-balanced node( move upward and compare the difference in height)
 - Find the Condition, **How?** next bullet! 😁
 - Find the grand child of the node + the path to the grand child node!
 - Once found,rotate to left!
@@ -293,7 +293,7 @@ def heapify(root, index):
 ## Insert a String in Tries:
 <img src="./img/inserttrie.png" width=400>
 
-- In one node we can insert more than one charactor (I in our example)
+- In one node we can insert more than one character (I in our example)
 
 <img src="./img/inserttrie1.png" width=400>
 
@@ -327,8 +327,8 @@ def heapify(root, index):
                 <img src="./img/delstr1.png" width=200>
 
     - **Case 2: String is a Prefix to other String!**
-        - 1. So for exp. in the below pic, if we wanna delete API we see that we have a headache! Cuz if we delete API, then APIS will be impacted! (S is after I; S relys on I) So what can we do? 🤔
-        - 2. So in this case, we dont delete the String! Rather we just update the EndingSting of the node! So that the Trie will not recognize it as a Complete String! 
+        - 1. So for exp. in the below pic, if we wanna delete API we see that we have a headache! Cuz if we delete API, then APIS will be impacted! (S is after I; S rely on I) So what can we do? 🤔
+        - 2. So in this case, we don't delete the String! Rather we just update the EndingSting of the node! So that the Trie will not recognize it as a Complete String! 
 
                 <img src="./img/delstr2.png" width=200> 
                 
@@ -338,7 +338,7 @@ def heapify(root, index):
     - **Case 3: Some other Strings are the prefix of the Str we wanna delete!**
 
 ## Summary of Deletion 
-- First check whether any node rely on the target node. If not, then we can delete it rightaway! If Yes, then
+- First check whether any node rely on the target node. If not, then we can delete it right away! If Yes, then
     - Do some adjustments, like changing the StringEndingPoint.
                  
 

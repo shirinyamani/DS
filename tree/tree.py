@@ -87,12 +87,12 @@ def depth_bfs(root):
     return levels
 
 # Question 4
-def isbalancehelper(root): #check hight
+def is_balancehelper(root): #check hight
     if root is None:
         return 0
     
-    leftheight = isbalancehelper(root.left)
-    rightheight = isbalancehelper(root.right)
+    leftheight = is_balancehelper(root.left)
+    rightheight = is_balancehelper(root.right)
 
     if leftheight == -1: #bigger than 1 difference
         return -1
@@ -270,7 +270,8 @@ class BST:
                 curr_node = curr_node.right
 
     def delete(self, value):
-        
+        pass
+
 
 
 
