@@ -269,7 +269,8 @@ class BST:
                     return
                 curr_node = curr_node.right
 
-                
+    def delete(self, value):
+        
 
 
 
